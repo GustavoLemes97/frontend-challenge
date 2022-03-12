@@ -1,31 +1,39 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import calculate from '../redux/actions';
+
+import netSalaryCalculator from '../utils/netSalaryCalculator';
 
 import Input from './Input';
 import Button from './Button';
 import AddRemoveInput from './AddRemoveInput';
 
 function Form() {
+  const dispatch = useDispatch();
   const [salary, setSalary] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [dependents, setDependents] = useState(0);
-  const inputsSetters = {
+  const inputSetter = {
     salary: (value) => setSalary(value),
     discount: (value) => setDiscount(value),
     dependents: (value) => setDependents(value),
   };
 
   const handleChange = ({ target: { name, value } }) => {
-    inputsSetters[name](Number(value));
+    inputSetter[name](Number(value));
   };
 
   const handleCalculate = () => {
+    const netSalaryData = netSalaryCalculator(salary, dependents, discount);
     const dataObject = {
       salary,
       dependents,
       discount,
+      netSalaryData,
     };
 
-    console.log(dataObject);
+    dispatch(calculate(dataObject));
   };
 
   return (
@@ -47,6 +55,7 @@ function Form() {
         label="Quantos dependentes você tem?"
         name="dependents"
         questionCircleText="Dependentes declarados no Imposto de Renda"
+        dependentsState={ { dependents, setDependents } }
         handleChange={ handleChange }
       />
       <Button
