@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import calculate from '../redux/actions';
 
 import netSalaryCalculator from '../utils/netSalaryCalculator';
+import formsProps from '../helpers/componentsProps';
 
 import Input from './Input';
 import Button from './Button';
@@ -40,41 +41,25 @@ function Form() {
     dispatch(calculate(dataObject));
   };
 
+  const {
+    salaryInputProps,
+    discountInputProps,
+    addRemoveInputProps,
+    buttonProps,
+  } = formsProps;
   return (
     <form>
       <Input
-        label="Qual seu salário bruto?"
-        name="salary"
-        questionCircleText="Salário bruto sem descontos"
-        handleChange={ handleChange }
-        labelClassName="first-input-label"
-        inputClassName="first-input"
-        inputQuestionClassName="first-input-question"
-        inputGroupClassName="first-input-group-text"
-        inputSectionClassName="first-input-section"
+        { ...salaryInputProps(handleChange) }
       />
       <Input
-        label="Total de descontos"
-        name="discount"
-        questionCircleText="Pensão alimentícia, plano de saúde..."
-        handleChange={ handleChange }
-        labelClassName="second-input-label"
-        inputClassName="second-input"
-        inputQuestionClassName="second-input-question"
-        inputGroupClassName="second-input-group-text"
-        inputSectionClassName="second-input-section"
+        { ...discountInputProps(handleChange) }
       />
       <AddRemoveInput
-        label="Quantos dependentes você tem?"
-        name="dependents"
-        questionCircleText="Dependentes declarados no Imposto de Renda"
-        dependentsState={ { dependents, setDependents } }
-        handleChange={ handleChange }
+        { ...addRemoveInputProps(handleChange, { dependents, setDependents }) }
       />
       <Button
-        buttonText="CALCULAR"
-        handleClick={ handleCalculate }
-        buttonClassName="calculate-button"
+        { ...buttonProps(handleCalculate) }
       />
     </form>
   );
