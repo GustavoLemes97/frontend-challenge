@@ -13,14 +13,14 @@ function CalculationResult() {
   return (
     <p className="net-salary-p">
       Seu salário líquido será
-      <div className="net-salary-img">
+      <span className="net-salary-img">
         <span className=" net-salary-span abbreviation-span">
           R$
         </span>
         <span className="net-salary-span">
           { formattedSalary }
         </span>
-      </div>
+      </span>
     </p>
   );
 }

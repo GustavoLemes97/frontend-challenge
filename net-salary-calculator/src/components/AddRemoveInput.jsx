@@ -1,6 +1,8 @@
 import React from 'react';
 import { string, number, func, shape } from 'prop-types';
 
+import { addRemoveInputProps } from '../helpers/componentsProps';
+
 import AddRemoveButton from './AddRemoveButton';
 
 import '../assets/css/Button.css';
@@ -25,7 +27,10 @@ function AddRemoveInput({
       setDependents(dependents - 1);
     }
   };
-
+  const {
+    removeButton,
+    addButton,
+  } = addRemoveInputProps;
   return (
     <section className="add-remove-section">
       <label
@@ -35,9 +40,7 @@ function AddRemoveInput({
         {label}
         <div className="add-remove-input-div">
           <AddRemoveButton
-            buttonType="remove"
-            handleClick={ handleMinusClick }
-            buttonClassName="remove-button"
+            { ...removeButton(handleMinusClick) }
           />
           <input
             id={ label }
@@ -49,9 +52,7 @@ function AddRemoveInput({
             className="add-remove-input"
           />
           <AddRemoveButton
-            buttonType="add"
-            handleClick={ handlePlusClick }
-            buttonClassName="add-button"
+            { ...addButton(handlePlusClick) }
           />
         </div>
       </label>

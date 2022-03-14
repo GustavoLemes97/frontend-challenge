@@ -47,4 +47,17 @@ const formsProps = {
   }),
 };
 
-export default formsProps;
+const addRemoveInputProps = {
+  removeButton: (callback) => ({
+    buttonType: 'remove',
+    buttonClassName: 'remove-button',
+    handleClick: callback,
+  }),
+  addButton: (callback) => ({
+    buttonType: 'add',
+    buttonClassName: 'add-button',
+    handleClick: callback,
+  }),
+};
+
+export { formsProps, addRemoveInputProps };
