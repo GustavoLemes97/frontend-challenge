@@ -17,8 +17,8 @@ import {
   FOURTH_IRRF_RANGE_VALUE,
 } from '../constants/irrf';
 
-import INSS_VALUES from '../helpers/inssTable';
-import IRRF_VALUES from '../helpers/irrfTable';
+import inssValuesTable from '../helpers/inssTable';
+import irrfValuesTable from '../helpers/irrfTable';
 
 const inRange = (value, min, max) => min < value && max >= value;
 
@@ -29,7 +29,10 @@ const filterObjectKeys = (obj) => {
   return filteredKey;
 };
 
-const getPercentual = (valueTotal, valueFraction) => (valueFraction / valueTotal) * 100;
+const getPercentual = (valueTotal, valueFraction) => {
+  if (valueTotal === 0) return 0;
+  return (valueFraction / valueTotal) * 100;
+};
 
 const getInssValues = (salary) => {
   const inssValues = {
@@ -52,7 +55,7 @@ const getInssValues = (salary) => {
   };
 
   const inssRange = filterObjectKeys(inssValues);
-  const inssPercentualAndDeduction = INSS_VALUES[inssRange];
+  const inssPercentualAndDeduction = inssValuesTable[inssRange];
 
   return inssPercentualAndDeduction;
 };
@@ -79,7 +82,7 @@ const getIrrfValues = (salary) => {
   };
 
   const irrfRange = filterObjectKeys(irrfValues);
-  const irrfPercentualAndDeduction = IRRF_VALUES[irrfRange];
+  const irrfPercentualAndDeduction = irrfValuesTable[irrfRange];
 
   return irrfPercentualAndDeduction;
 };
