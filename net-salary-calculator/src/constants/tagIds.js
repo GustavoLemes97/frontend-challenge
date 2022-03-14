@@ -19,6 +19,8 @@ const INPUT_QUESTION_TEXT_ID = {
 
 const BUTTON_ID = {
   calculateButton: 'calculate-button',
+  addButton: 'add-buton',
+  removeButton: 'remove-button',
 };
 
 module.exports = {

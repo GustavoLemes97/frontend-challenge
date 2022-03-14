@@ -51,11 +51,13 @@ const formsProps = {
 
 const addRemoveInputProps = {
   removeButton: (callback) => ({
+    buttonId: BUTTON_ID.removeButton,
     buttonType: 'remove',
     buttonClassName: 'remove-button',
     handleClick: callback,
   }),
   addButton: (callback) => ({
+    buttonId: BUTTON_ID.addButton,
     buttonType: 'add',
     buttonClassName: 'add-button',
     handleClick: callback,
