@@ -11,7 +11,7 @@ import {
   FIFTH_IRRF_DEDUCTION,
 } from '../constants/irrf';
 
-const IRRF_VALUES = {
+const irrfValuesTable = {
   firstIrrfValues: [FIRST_ALIQUOT, FIRST_IRRF_DEDUCTION],
   secondtIrrfValues: [SECOND_ALIQUOT, SECOND_IRRF_DEDUCTION],
   thirdIrrfValues: [THIRD_ALIQUOT, THIRD_IRRF_DEDUCTION],
@@ -19,4 +19,4 @@ const IRRF_VALUES = {
   fifthIrrfValues: [FIFTH_ALIQUOT, FIFTH_IRRF_DEDUCTION],
 };
 
-export default IRRF_VALUES;
+export default irrfValuesTable;
