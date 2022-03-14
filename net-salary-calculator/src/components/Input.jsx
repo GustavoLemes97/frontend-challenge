@@ -4,6 +4,9 @@ import { string, func } from 'prop-types';
 import { question } from '../assets/images';
 
 function Input({
+  labelId,
+  inputId,
+  questionId,
   label,
   name,
   questionCircleText,
@@ -17,6 +20,7 @@ function Input({
   return (
     <section className={ inputSectionClassName }>
       <label
+        id={ labelId }
         htmlFor={ label }
         className={ labelClassName }
       >
@@ -24,7 +28,7 @@ function Input({
         <div className="input-group">
           <span className={ inputGroupClassName }>R$</span>
           <input
-            id={ label }
+            id={ inputId }
             name={ name }
             type="number"
             placeholder="0,00"
@@ -33,7 +37,10 @@ function Input({
           />
         </div>
       </label>
-      <div className={ inputQuestionClassName }>
+      <div
+        className={ inputQuestionClassName }
+        id={ questionId }
+      >
         <img src={ question } alt={ questionCircleText } />
         <span>{ questionCircleText }</span>
       </div>
@@ -44,6 +51,9 @@ function Input({
 export default Input;
 
 Input.propTypes = {
+  labelId: string.isRequired,
+  inputId: string.isRequired,
+  questionId: string.isRequired,
   label: string.isRequired,
   name: string.isRequired,
   questionCircleText: string.isRequired,
