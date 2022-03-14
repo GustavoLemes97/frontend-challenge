@@ -3,6 +3,10 @@ import { string, number, func, shape } from 'prop-types';
 
 import Button from './Button';
 
+import '../assets/css/Button.css';
+import '../assets/css/AddRemoveInput.css';
+import { minus, plus, question } from '../assets/images';
+
 function AddRemoveInput({
   label,
   name,
@@ -23,29 +27,46 @@ function AddRemoveInput({
   };
 
   return (
-    <section>
-      <label htmlFor={ label }>
+    <section className="add-remove-section">
+      <label
+        htmlFor={ label }
+        className="add-remove-input-label"
+      >
         {label}
-        <Button
-          buttonText="-"
-          handleClick={ handleMinusClick }
-        />
-        <input
-          id={ label }
-          name={ name }
-          type="number"
-          placeholder="0"
-          value={ dependents }
-          onChange={ handleChange }
-        />
+        <div className="add-remove-input-div">
+          <Button
+            buttonText={ <img src={ minus } alt="minus button" /> }
+            handleClick={ handleMinusClick }
+            buttonClassName="remove-button"
+          />
+          <input
+            id={ label }
+            name={ name }
+            type="number"
+            placeholder="0"
+            value={ dependents }
+            onChange={ handleChange }
+            className="add-remove-input"
+          />
+          <Button
+            buttonText={ <img src={ plus } alt="minus button" /> }
+            handleClick={ handlePlusClick }
+            buttonClassName="add-button"
+          />
+        </div>
       </label>
-      <Button
-        buttonText="+"
-        handleClick={ handlePlusClick }
-      />
-      <span>
-        { questionCircleText }
-      </span>
+      <div className="add-remove-input-question">
+        <img
+          className="add-remove-input-question-img"
+          src={ question }
+          alt={ questionCircleText }
+        />
+        <span
+          className="add-remove-input-question-span"
+        >
+          { questionCircleText }
+        </span>
+      </div>
     </section>
   );
 }

@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import getFormattedValue from '../utils/convertValueFormat';
 
+import '../assets/css/HowToCalculate.css';
+
 function HowToCalculate() {
   const {
     salary,
@@ -32,34 +34,77 @@ function HowToCalculate() {
 
   return (
     <section>
-      <table>
+      <table className="calculate-table">
         <thead>
           <tr>
-            <th>Como o cálculo é feito?</th>
+            <th
+              className="table-header"
+            >
+              Como o cálculo é feito?
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Salário bruto</td>
-            <td>
+            <td
+              className="table-first-column"
+            >
+              Salário bruto
+            </td>
+            <td
+              className="table-second-column"
+            >
               { `R$ ${formattedSalary}` }
             </td>
           </tr>
           <tr>
-            <td>{ `INSS (${formattedInssPercentual}%)` }</td>
-            <td>{ `- R$ ${formattedInssDeduction}` }</td>
+            <td
+              className="table-first-column"
+            >
+              { `INSS (${formattedInssPercentual}%)` }
+            </td>
+            <td
+              className="table-second-column"
+            >
+              { `- R$ ${formattedInssDeduction}` }
+            </td>
           </tr>
           <tr>
-            <td>{ `IRRF (${formattedIrrfPercentual}%)` }</td>
-            <td>{ `- R$ ${formattedIrrfDeduction}` }</td>
+            <td
+              className="table-first-column"
+            >
+              { `IRRF (${formattedIrrfPercentual}%)` }
+            </td>
+            <td
+              className="table-second-column"
+            >
+              { `- R$ ${formattedIrrfDeduction}` }
+            </td>
           </tr>
           <tr>
-            <td>Outros descontos</td>
-            <td>{ `- R$ ${formattedDiscount}` }</td>
+            <td
+              className="table-first-column"
+            >
+              Outros descontos
+            </td>
+            <td
+              className="table-second-column"
+            >
+              { `- R$ ${formattedDiscount}` }
+            </td>
           </tr>
+          <tr className="table-line" />
           <tr>
-            <td>Salário líquido</td>
-            <td>{ `R$ ${formattedNetSalary}` }</td>
+            <td
+              className="table-first-column last-row"
+            >
+              Salário líquido
+            </td>
+            <td
+              className="table-second-column last-row"
+            >
+              { `R$ ${formattedNetSalary}` }
+            </td>
           </tr>
         </tbody>
       </table>

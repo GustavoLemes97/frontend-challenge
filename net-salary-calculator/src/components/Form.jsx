@@ -9,6 +9,10 @@ import Input from './Input';
 import Button from './Button';
 import AddRemoveInput from './AddRemoveInput';
 
+import '../assets/css/Form.css';
+import '../assets/css/Input.css';
+import '../assets/css/Button.css';
+
 function Form() {
   const dispatch = useDispatch();
   const [salary, setSalary] = useState(0);
@@ -38,18 +42,27 @@ function Form() {
 
   return (
     <form>
-      <h1>Calculadora de salário líquido</h1>
       <Input
         label="Qual seu salário bruto?"
         name="salary"
         questionCircleText="Salário bruto sem descontos"
         handleChange={ handleChange }
+        labelClassName="first-input-label"
+        inputClassName="first-input"
+        inputQuestionClassName="first-input-question"
+        inputGroupClassName="first-input-group-text"
+        inputSectionClassName="first-input-section"
       />
       <Input
         label="Total de descontos"
         name="discount"
         questionCircleText="Pensão alimentícia, plano de saúde..."
         handleChange={ handleChange }
+        labelClassName="second-input-label"
+        inputClassName="second-input"
+        inputQuestionClassName="second-input-question"
+        inputGroupClassName="second-input-group-text"
+        inputSectionClassName="second-input-section"
       />
       <AddRemoveInput
         label="Quantos dependentes você tem?"
@@ -61,6 +74,7 @@ function Form() {
       <Button
         buttonText="CALCULAR"
         handleClick={ handleCalculate }
+        buttonClassName="calculate-button"
       />
     </form>
   );

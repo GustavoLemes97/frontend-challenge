@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
-
+import './assets/css/App.css';
+import Header from './components/Header';
 import CalculatorPage from './pages/CalculatorPage';
 
 function App() {
   return (
-    <CalculatorPage />
+    <main className="app">
+      <Header />
+      <CalculatorPage />
+    </main>
   );
 }
 

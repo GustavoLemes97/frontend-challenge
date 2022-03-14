@@ -1,0 +1,41 @@
+.calculate-button,
+.add-button,
+.remove-button {
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.calculate-button {
+  background: #71FFA0;
+  border-radius: 50px;
+  color: #35255F;
+  font-size: 18px;
+  font-weight: 700;
+  height: 67px;
+  line-height: 21px;
+  margin-left: 64px;
+  top: 44px;
+  width: 173px;
+}
+
+.add-button,
+.remove-button {
+  background: none;
+  height: 25px;
+  padding: 0;
+  top: 18.67px;
+}
+
+.add-button {
+  left: 1.67px;
+}
+
+.remove-button {
+  right: 1.67px;
+}
+
+.add-button img,
+.remove-button img {
+  width: 60px;
+}
