@@ -17,10 +17,15 @@ const INPUT_QUESTION_TEXT_ID = {
   dependentsQuestion: 'dependents-question',
 };
 
+const BUTTON_ID = {
+  calculateButton: 'calculate-button',
+};
+
 module.exports = {
   HEADER_TEXT_ID,
   HEADER_LOGO_ID,
   INPUT_ID,
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
+  BUTTON_ID,
 };

@@ -2,6 +2,7 @@ import {
   INPUT_ID,
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
+  BUTTON_ID,
 } from '../constants/tagIds';
 
 const formsProps = {
@@ -41,6 +42,7 @@ const formsProps = {
     handleChange: callback,
   }),
   buttonProps: (callback) => ({
+    buttonId: BUTTON_ID.calculateButton,
     buttonText: 'CALCULAR',
     buttonClassName: 'calculate-button',
     handleClick: callback,
