@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen, configure } from '@testing-library/react';
 
+import { formsProps } from '../helpers/componentsProps';
+
 import Input from '../components/Input';
 
 import {
@@ -11,24 +13,11 @@ import {
 
 configure({ testIdAttribute: 'id' });
 
-const inputProps = {
-  inputId: INPUT_ID.salaryInput,
-  labelId: INPUT_LABEL_ID.salaryLabel,
-  questionId: INPUT_QUESTION_TEXT_ID.salaryQuestion,
-  label: 'testLabel',
-  name: 'testName',
-  questionCircleText: 'testQuestionText',
-  handleChange: () => {},
-  labelClassName: '',
-  inputClassName: '',
-  inputQuestionClassName: '',
-  inputGroupClassName: '',
-  inputSectionClassName: '',
-};
+const { salaryInputProps } = formsProps;
 
 describe('Create an Input with the following characteristics', () => {
   test('Verify if the input to be with correct characteristics', () => {
-    render(<Input { ...inputProps } />);
+    render(<Input { ...salaryInputProps(() => {}) } />);
     const input = screen.getByTestId(INPUT_ID.salaryInput);
     const inputPlaceHolder = screen
       .getByTestId(INPUT_ID.salaryInput).getAttribute('placeholder');
@@ -38,18 +27,18 @@ describe('Create an Input with the following characteristics', () => {
   });
 
   test('Verify if the input label to be with correct characteristics', () => {
-    render(<Input { ...inputProps } />);
+    render(<Input { ...salaryInputProps(() => {}) } />);
     const label = screen.getByTestId(INPUT_LABEL_ID.salaryLabel);
 
     expect(label).toBeInTheDocument();
-    expect(label).toHaveTextContent('testLabel');
+    expect(label).toHaveTextContent('Qual seu salário bruto?');
   });
 
   test('Verify if the input question to be with correct characteristics', () => {
-    render(<Input { ...inputProps } />);
+    render(<Input { ...salaryInputProps(() => {}) } />);
     const question = screen.getByTestId(INPUT_QUESTION_TEXT_ID.salaryQuestion);
 
     expect(question).toBeInTheDocument();
-    expect(question).toHaveTextContent('testQuestionText');
+    expect(question).toHaveTextContent('Salário bruto sem descontos');
   });
 });
