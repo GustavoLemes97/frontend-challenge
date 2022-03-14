@@ -1,11 +1,11 @@
 import React from 'react';
 import { string, number, func, shape } from 'prop-types';
 
-import Button from './Button';
+import AddRemoveButton from './AddRemoveButton';
 
 import '../assets/css/Button.css';
 import '../assets/css/AddRemoveInput.css';
-import { minus, plus, question } from '../assets/images';
+import { question } from '../assets/images';
 
 function AddRemoveInput({
   label,
@@ -34,8 +34,8 @@ function AddRemoveInput({
       >
         {label}
         <div className="add-remove-input-div">
-          <Button
-            buttonText={ <img src={ minus } alt="minus button" /> }
+          <AddRemoveButton
+            buttonType="remove"
             handleClick={ handleMinusClick }
             buttonClassName="remove-button"
           />
@@ -48,8 +48,8 @@ function AddRemoveInput({
             onChange={ handleChange }
             className="add-remove-input"
           />
-          <Button
-            buttonText={ <img src={ plus } alt="minus button" /> }
+          <AddRemoveButton
+            buttonType="add"
             handleClick={ handlePlusClick }
             buttonClassName="add-button"
           />
