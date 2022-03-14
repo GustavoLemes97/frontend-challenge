@@ -3,6 +3,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import getFormattedValue from '../utils/convertValueFormat';
+import {
+  CALCULATE_RESULT_TEXT_ID,
+  ABBREVIATION_TEXT_ID,
+  CALCULATE_NET_SALARY_TEXT_ID,
+} from '../constants/tagIds';
 
 import '../assets/css/CalculationResult.css';
 
@@ -12,12 +17,18 @@ function CalculationResult() {
 
   return (
     <p className="net-salary-p">
-      Seu salário líquido será
+      <span id={ CALCULATE_RESULT_TEXT_ID }>Seu salário líquido será</span>
       <span className="net-salary-img">
-        <span className=" net-salary-span abbreviation-span">
+        <span
+          id={ ABBREVIATION_TEXT_ID }
+          className="net-salary-span abbreviation-span"
+        >
           R$
         </span>
-        <span className="net-salary-span">
+        <span
+          id={ CALCULATE_NET_SALARY_TEXT_ID }
+          className="net-salary-span"
+        >
           { formattedSalary }
         </span>
       </span>

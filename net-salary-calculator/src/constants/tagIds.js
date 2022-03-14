@@ -1,5 +1,8 @@
 const HEADER_TEXT_ID = 'header-text';
 const HEADER_LOGO_ID = 'header-logo';
+const CALCULATE_RESULT_TEXT_ID = 'calculate-result-text';
+const ABBREVIATION_TEXT_ID = 'abbreviation-text';
+const CALCULATE_NET_SALARY_TEXT_ID = 'calculate-net-salary';
 
 const INPUT_ID = {
   salaryInput: 'salary-input',
@@ -30,4 +33,7 @@ module.exports = {
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
   BUTTON_ID,
+  CALCULATE_RESULT_TEXT_ID,
+  ABBREVIATION_TEXT_ID,
+  CALCULATE_NET_SALARY_TEXT_ID,
 };
