@@ -1,0 +1,41 @@
+.net-salary-p,
+.net-salary-img {
+  display: flex;
+  flex-direction: row;
+}
+
+.net-salary-p {
+  height: 42px;
+  left: 610px;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 42px;
+  padding-top: 15px;
+  position: relative;
+  top: 493px;
+  width: 371px;
+}
+
+.net-salary-img {
+  align-items: center;
+  background-image: url('../images/border.png');
+  justify-content: center;
+  height: 134px;
+  left: 379px;
+  position: absolute;
+  top: -36px;
+  width: 401px;
+}
+
+.net-salary-span {
+  color: #71FFA0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+}
+
+.abbreviation-span {
+  font-size: 24px;
+  line-height: 28px;
+  margin-right: 11px;
+}
