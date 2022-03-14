@@ -49,7 +49,7 @@ const formsProps = {
   }),
 };
 
-const addRemoveInputProps = {
+const addRemoveButtonProps = {
   removeButton: (callback) => ({
     buttonId: BUTTON_ID.removeButton,
     buttonType: 'remove',
@@ -64,4 +64,4 @@ const addRemoveInputProps = {
   }),
 };
 
-export { formsProps, addRemoveInputProps };
+export { formsProps, addRemoveButtonProps };
