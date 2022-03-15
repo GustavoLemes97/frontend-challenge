@@ -104,6 +104,10 @@ const getIRRFDeduction = (salary) => {
 };
 
 const netSalaryCalculator = (salary, dependents = 0, discount = 0) => {
+  if (salary === 0) {
+    dependents = 0;
+    discount = 0;
+  }
   const inssDetuction = getINSSDeduction(salary);
   const salaryWithInssDeduction = salary - inssDetuction;
   const salaryWithInssAndDependentsDeduction = salaryWithInssDeduction
@@ -112,6 +116,7 @@ const netSalaryCalculator = (salary, dependents = 0, discount = 0) => {
   const netSalary = salaryWithInssDeduction - irrfDeduction - discount;
 
   const netSalaryData = {
+    discount,
     netSalary,
     inss: {
       deduction: inssDetuction,
