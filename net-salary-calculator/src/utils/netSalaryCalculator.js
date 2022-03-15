@@ -11,8 +11,7 @@ import {
   FOURTH_IRRF_RANGE_VALUE,
 } from '../constants';
 
-import inssValuesTable from '../helpers/inssTable';
-import irrfValuesTable from '../helpers/irrfTable';
+import { inssValuesTable, irrfValuesTable } from '../helpers';
 
 const inRange = (value, min, max) => min < value && max >= value;
 
