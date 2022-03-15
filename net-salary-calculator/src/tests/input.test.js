@@ -14,7 +14,7 @@ import {
 
 configure({ testIdAttribute: 'id' });
 
-const { salaryInputProps } = formsProps;
+const { salaryInputProps, discountInputProps } = formsProps;
 
 describe('Create an Input with the following characteristics', () => {
   test('Verify if the input to be with correct characteristics', () => {
@@ -56,7 +56,7 @@ describe('Create an Input with the following characteristics', () => {
   });
 
   test('Verify if the discount input has the correct format', () => {
-    render(<Input { ...salaryInputProps(() => {}) } />);
+    render(<Input { ...discountInputProps(() => {}) } />);
     const input = screen.getByTestId(INPUT_ID.discountInput);
 
     userEvent.type(input, '1');
