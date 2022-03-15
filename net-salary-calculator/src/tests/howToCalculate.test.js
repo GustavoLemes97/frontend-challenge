@@ -31,7 +31,7 @@ const INITIAL_STATE = {
   },
 };
 
-describe('Create a Component with the calculate result', () => {
+describe('Create a Component showing how to calculat the net salary', () => {
   test('Verify if the text "Como o cálculo é feito?" to be in the component', () => {
     renderWithRedux(<HowToCalculate />, { initialState: INITIAL_STATE });
     const text = screen.getByTestId(HOW_TO_CALCULATE_TEXT_ID);
