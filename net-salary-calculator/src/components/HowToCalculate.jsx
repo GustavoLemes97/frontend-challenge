@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { useSelector } from 'react-redux';
 
-import getFormattedValue from '../utils/convertValueFormat';
+import { getFormattedValue } from '../utils';
 import {
   HOW_TO_CALCULATE_TEXT_ID,
   HOW_TO_CALCULATE_TABLE_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 import '../assets/css/HowToCalculate.css';
 

@@ -1,6 +1,6 @@
 import {
   CALCULATE,
-} from '../../constants/actionTypes';
+} from '../../constants';
 
 const calculate = (data) => ({
   type: CALCULATE,

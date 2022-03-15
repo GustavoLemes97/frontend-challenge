@@ -1,5 +1,6 @@
 import React from 'react';
 import { string, number, func } from 'prop-types';
+
 import CurrencyInput from 'react-currency-input';
 
 import { question } from '../assets/images';

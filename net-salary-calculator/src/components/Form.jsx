@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import calculate from '../redux/actions';
 
-import netSalaryCalculator from '../utils/netSalaryCalculator';
+import { netSalaryCalculator } from '../utils';
 import { formsProps } from '../helpers/componentsProps';
 
 import Input from './Input';

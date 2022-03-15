@@ -7,7 +7,7 @@ import Button from '../components/Button';
 
 import {
   BUTTON_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 

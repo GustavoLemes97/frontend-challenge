@@ -3,7 +3,7 @@ import {
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
   BUTTON_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 const formsProps = {
   salaryInputProps: (callback, value = 0) => ({
