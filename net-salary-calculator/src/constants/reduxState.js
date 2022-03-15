@@ -3,6 +3,7 @@ const INITIAL_STATE = {
   dependents: 0,
   discount: 0,
   netSalaryData: {
+    discount: 0,
     netSalary: 0,
     inss: {
       deduction: 0,
@@ -21,6 +22,7 @@ const INITIAL_TEST_STATE = {
     dependents: 0,
     discount: 0,
     netSalaryData: {
+      discount: 0,
       netSalary: 0,
       inss: {
         deduction: 0,
@@ -39,6 +41,7 @@ const EXPECTED_TEST_STATE = {
     dependents: 3,
     discount: 150,
     netSalaryData: {
+      discount: 150,
       inss: {
         deduction: 245,
         percentual: 8.75,

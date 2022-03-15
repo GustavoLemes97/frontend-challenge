@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import calculate from '../redux/actions';
 
 import { netSalaryCalculator } from '../utils';
-import { formsProps } from '../helpers/componentsProps';
+import { formsProps } from '../helpers';
 
 import Input from './Input';
 import Button from './Button';

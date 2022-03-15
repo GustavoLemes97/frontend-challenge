@@ -8,32 +8,15 @@ import HowToCalculate from '../components/HowToCalculate';
 import {
   HOW_TO_CALCULATE_TEXT_ID,
   HOW_TO_CALCULATE_TABLE_ID,
+  INITIAL_TEST_STATE,
+  EXPECTED_TEST_STATE,
 } from '../constants';
 
 configure({ testIdAttribute: 'id' });
 
-const INITIAL_STATE = {
-  calculator: {
-    salary: 2800,
-    dependents: 3,
-    discount: 150,
-    netSalaryData: {
-      netSalary: 2398.8327,
-      inss: {
-        deduction: 245,
-        percentual: 8.75,
-      },
-      irrf: {
-        deduction: 6.1672,
-        percentual: 0.2413,
-      },
-    },
-  },
-};
-
 describe('Create a Component showing how to calculat the net salary', () => {
   test('Verify if the text "Como o cálculo é feito?" to be in the component', () => {
-    renderWithRedux(<HowToCalculate />, { initialState: INITIAL_STATE });
+    renderWithRedux(<HowToCalculate />, { initialState: INITIAL_TEST_STATE });
     const text = screen.getByTestId(HOW_TO_CALCULATE_TEXT_ID);
 
     expect(text).toBeInTheDocument();
@@ -43,7 +26,7 @@ describe('Create a Component showing how to calculat the net salary', () => {
   test('Verify table rows content in the component', () => {
     const { queryAllByRole } = renderWithRedux(
       <HowToCalculate />,
-      { initialState: INITIAL_STATE },
+      { initialState: EXPECTED_TEST_STATE },
     );
     const table = screen.getByTestId(HOW_TO_CALCULATE_TABLE_ID);
     const tableRows = queryAllByRole('row');

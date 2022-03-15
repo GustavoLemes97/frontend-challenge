@@ -12,10 +12,10 @@ import '../assets/css/HowToCalculate.css';
 function HowToCalculate() {
   const {
     salary,
-    discount,
     netSalaryData,
   } = useSelector(({ calculator }) => calculator);
   const {
+    discount,
     netSalary,
     inss: {
       deduction: inssDeduction,
