@@ -73,8 +73,8 @@ describe('Create a Form to receive data and to calculate the net salary', () => 
       const startedState = store.getState();
       expect(startedState).toEqual(INITIAL_STATE);
 
-      userEvent.type(salaryInput, '2800');
-      userEvent.type(discountInput, '150');
+      userEvent.type(salaryInput, '2800,00');
+      userEvent.type(discountInput, '150,00');
       fireEvent.click(incrementButton);
       fireEvent.click(incrementButton);
       fireEvent.click(incrementButton);
@@ -99,8 +99,8 @@ describe('Create a Form to receive data and to calculate the net salary', () => 
       const startedState = store.getState();
       expect(startedState).toEqual(INITIAL_STATE);
 
-      userEvent.type(salaryInput, '2800');
-      userEvent.type(discountInput, '150');
+      userEvent.type(salaryInput, '2800,00');
+      userEvent.type(discountInput, '150,00');
       userEvent.type(dependentsInput, '3');
       fireEvent.click(calculateButton);
       const currentState = store.getState();
