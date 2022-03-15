@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 
 import { plus, minus } from '../assets/images';
 
-function AddRemoveButton({ buttonType, handleClick, buttonClassName }) {
+function AddRemoveButton({ buttonId, buttonType, handleClick, buttonClassName }) {
   const buttonData = {
     add: {
       image: plus,
@@ -19,6 +19,7 @@ function AddRemoveButton({ buttonType, handleClick, buttonClassName }) {
 
   return (
     <button
+      id={ buttonId }
       type="button"
       onClick={ handleClick }
       className={ buttonClassName }
@@ -31,6 +32,7 @@ function AddRemoveButton({ buttonType, handleClick, buttonClassName }) {
 export default AddRemoveButton;
 
 AddRemoveButton.propTypes = {
+  buttonId: string.isRequired,
   buttonType: string.isRequired,
   handleClick: func.isRequired,
   buttonClassName: string.isRequired,

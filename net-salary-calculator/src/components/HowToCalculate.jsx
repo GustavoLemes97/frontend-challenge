@@ -3,6 +3,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import getFormattedValue from '../utils/convertValueFormat';
+import {
+  HOW_TO_CALCULATE_TEXT_ID,
+  HOW_TO_CALCULATE_TABLE_ID,
+} from '../constants/tagIds';
 
 import '../assets/css/HowToCalculate.css';
 
@@ -34,10 +38,14 @@ function HowToCalculate() {
 
   return (
     <section>
-      <table className="calculate-table">
+      <table
+        id={ HOW_TO_CALCULATE_TABLE_ID }
+        className="calculate-table"
+      >
         <thead>
           <tr>
             <th
+              id={ HOW_TO_CALCULATE_TEXT_ID }
               className="table-header"
             >
               Como o cálculo é feito?

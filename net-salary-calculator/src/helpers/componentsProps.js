@@ -2,6 +2,7 @@ import {
   INPUT_ID,
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
+  BUTTON_ID,
 } from '../constants/tagIds';
 
 const formsProps = {
@@ -41,23 +42,26 @@ const formsProps = {
     handleChange: callback,
   }),
   buttonProps: (callback) => ({
+    buttonId: BUTTON_ID.calculateButton,
     buttonText: 'CALCULAR',
     buttonClassName: 'calculate-button',
     handleClick: callback,
   }),
 };
 
-const addRemoveInputProps = {
+const addRemoveButtonProps = {
   removeButton: (callback) => ({
+    buttonId: BUTTON_ID.removeButton,
     buttonType: 'remove',
     buttonClassName: 'remove-button',
     handleClick: callback,
   }),
   addButton: (callback) => ({
+    buttonId: BUTTON_ID.addButton,
     buttonType: 'add',
     buttonClassName: 'add-button',
     handleClick: callback,
   }),
 };
 
-export { formsProps, addRemoveInputProps };
+export { formsProps, addRemoveButtonProps };

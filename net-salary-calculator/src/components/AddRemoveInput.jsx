@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, number, func, shape } from 'prop-types';
 
-import { addRemoveInputProps } from '../helpers/componentsProps';
+import { addRemoveButtonProps } from '../helpers/componentsProps';
 
 import AddRemoveButton from './AddRemoveButton';
 
@@ -30,10 +30,11 @@ function AddRemoveInput({
   const {
     removeButton,
     addButton,
-  } = addRemoveInputProps;
+  } = addRemoveButtonProps;
   return (
     <section className="add-remove-section">
       <label
+        id="dependents-label"
         htmlFor={ label }
         className="add-remove-input-label"
       >
@@ -43,7 +44,7 @@ function AddRemoveInput({
             { ...removeButton(handleMinusClick) }
           />
           <input
-            id={ label }
+            id="dependents-input"
             name={ name }
             type="number"
             placeholder="0"
@@ -63,6 +64,7 @@ function AddRemoveInput({
           alt={ questionCircleText }
         />
         <span
+          id="dependents-question"
           className="add-remove-input-question-span"
         >
           { questionCircleText }
