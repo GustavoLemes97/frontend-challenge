@@ -49,6 +49,11 @@ import {
   HOW_TO_CALCULATE_TEXT_ID,
   HOW_TO_CALCULATE_TABLE_ID,
 } from './tagIds';
+import {
+  URL_TO_VISIT,
+  HAVE_VALUE,
+  HAVE_TEXT,
+} from './cypress';
 
 export {
   CALCULATE,
@@ -94,4 +99,7 @@ export {
   CALCULATE_NET_SALARY_TEXT_ID,
   HOW_TO_CALCULATE_TEXT_ID,
   HOW_TO_CALCULATE_TABLE_ID,
+  URL_TO_VISIT,
+  HAVE_VALUE,
+  HAVE_TEXT,
 };
