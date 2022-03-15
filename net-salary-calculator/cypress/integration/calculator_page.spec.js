@@ -218,3 +218,40 @@ describe('Verify if the calculation with invalid'
       .get('tr').get('td').eq(9).should(HAVE_TEXT, 'R$ 0,00');
   });
 });
+
+describe('Verify if the calculation without salary value changes nothing', () => {
+  it('Nothing should change when there is no salary value', () => {
+    cy.visit(URL_TO_VISIT);
+
+    cy.get(`[id=${INPUT_ID.salaryInput}]`).type('0,00');
+    cy.get(`[id=${INPUT_ID.discountInput}]`).type('150,00');
+    cy.get(`[id=${INPUT_ID.dependentsInput}]`).type('3');
+    cy.get(`[id=${BUTTON_ID.calculateButton}]`).click();
+
+    cy.get(`[id=${CALCULATE_NET_SALARY_TEXT_ID}]`).should(HAVE_TEXT, '0,00');
+  });
+
+  it('How to calculate table should not change when there is no salary value', () => {
+    cy.visit(URL_TO_VISIT);
+
+    cy.get(`[id=${INPUT_ID.salaryInput}]`).type('0,00');
+    cy.get(`[id=${INPUT_ID.discountInput}]`).type('150,00');
+    cy.get(`[id=${INPUT_ID.dependentsInput}]`).type('3');
+    cy.get(`[id=${BUTTON_ID.calculateButton}]`).click();
+
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(1).should(HAVE_TEXT, 'R$ 0,00');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(2).should(HAVE_TEXT, 'INSS (0,00%)');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(3).should(HAVE_TEXT, '- R$ 0,00');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(4).should(HAVE_TEXT, 'IRRF (0,00%)');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(5).should(HAVE_TEXT, '- R$ 0,00');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(7).should(HAVE_TEXT, '- R$ 0,00');
+    cy.get(`[id=${HOW_TO_CALCULATE_TABLE_ID}]`)
+      .get('tr').get('td').eq(9).should(HAVE_TEXT, 'R$ 0,00');
+  });
+});
