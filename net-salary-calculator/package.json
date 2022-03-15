@@ -14,6 +14,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "cypress": "^9.5.2",
     "eslint-config-trybe-frontend": "1.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "cy:open": "cypress open",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
