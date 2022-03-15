@@ -7,7 +7,7 @@ import {
   SECOND_INSS_DEDUCTION,
   THIRD_INSS_DEDUCTION,
   FOURTH_INSS_DEDUCTION,
-} from '../constants/inss';
+} from '../constants';
 
 const inssValuesTable = {
   firstInssValues: [FIRST_ALIQUOT, FIRST_INSS_DEDUCTION],

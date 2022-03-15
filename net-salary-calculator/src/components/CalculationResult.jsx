@@ -1,13 +1,12 @@
 import React from 'react';
-
 import { useSelector } from 'react-redux';
 
-import getFormattedValue from '../utils/convertValueFormat';
+import { getFormattedValue } from '../utils';
 import {
   CALCULATE_RESULT_TEXT_ID,
   ABBREVIATION_TEXT_ID,
   CALCULATE_NET_SALARY_TEXT_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 import '../assets/css/CalculationResult.css';
 

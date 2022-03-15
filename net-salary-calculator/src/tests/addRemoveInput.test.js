@@ -9,7 +9,7 @@ import {
   INPUT_ID,
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 

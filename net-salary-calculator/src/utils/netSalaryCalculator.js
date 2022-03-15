@@ -4,18 +4,12 @@ import {
   THIRD_INSS_RANGE_VALUE,
   FOURTH_INSS_RANGE_VALUE,
   INSS_TETO_DEDUCTION,
-} from '../constants/inss';
-
-import {
   DEPENDENT_DEDUCTION,
-} from '../constants/dependent';
-
-import {
   FIRST_IRRF_RANGE_VALUE,
   SECOND_IRRF_RANGE_VALUE,
   THIRD_IRRF_RANGE_VALUE,
   FOURTH_IRRF_RANGE_VALUE,
-} from '../constants/irrf';
+} from '../constants';
 
 import inssValuesTable from '../helpers/inssTable';
 import irrfValuesTable from '../helpers/irrfTable';

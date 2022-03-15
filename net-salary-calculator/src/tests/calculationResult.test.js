@@ -9,32 +9,14 @@ import {
   CALCULATE_RESULT_TEXT_ID,
   ABBREVIATION_TEXT_ID,
   CALCULATE_NET_SALARY_TEXT_ID,
-} from '../constants/tagIds';
+  EXPECTED_TEST_STATE,
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 
-const INITIAL_STATE = {
-  calculator: {
-    salary: 2800,
-    dependents: 3,
-    discount: 150,
-    netSalaryData: {
-      netSalary: 2398.8327,
-      inss: {
-        deduction: 245,
-        percentual: 8.75,
-      },
-      irrf: {
-        deduction: 6.1672,
-        percentual: 0.2413,
-      },
-    },
-  },
-};
-
 describe('Create a Component with the calculate result', () => {
   test('Verify if the text "Seu salário líquido será" to be in the component', () => {
-    renderWithRedux(<CalculationResult />, { initialState: INITIAL_STATE });
+    renderWithRedux(<CalculationResult />, { initialState: EXPECTED_TEST_STATE });
     const text = screen.getByTestId(CALCULATE_RESULT_TEXT_ID);
 
     expect(text).toBeInTheDocument();
@@ -42,7 +24,7 @@ describe('Create a Component with the calculate result', () => {
   });
 
   test('Verify if the text "R$" to be in the component', () => {
-    renderWithRedux(<CalculationResult />, { initialState: INITIAL_STATE });
+    renderWithRedux(<CalculationResult />, { initialState: EXPECTED_TEST_STATE });
     const abbreviationText = screen.getByTestId(ABBREVIATION_TEXT_ID);
 
     expect(abbreviationText).toBeInTheDocument();
@@ -50,7 +32,7 @@ describe('Create a Component with the calculate result', () => {
   });
 
   test('Verify if the net salary to be in the component', () => {
-    renderWithRedux(<CalculationResult />, { initialState: INITIAL_STATE });
+    renderWithRedux(<CalculationResult />, { initialState: EXPECTED_TEST_STATE });
     const netSalaryResult = screen.getByTestId(CALCULATE_NET_SALARY_TEXT_ID);
 
     expect(netSalaryResult).toBeInTheDocument();

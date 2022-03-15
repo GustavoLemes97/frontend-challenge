@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import {
   HEADER_TEXT_ID,
   HEADER_LOGO_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 

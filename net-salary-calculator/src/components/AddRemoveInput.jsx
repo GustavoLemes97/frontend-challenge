@@ -5,9 +5,9 @@ import { addRemoveButtonProps } from '../helpers/componentsProps';
 
 import AddRemoveButton from './AddRemoveButton';
 
+import { question } from '../assets/images';
 import '../assets/css/Button.css';
 import '../assets/css/AddRemoveInput.css';
-import { question } from '../assets/images';
 
 function AddRemoveInput({
   label,

@@ -3,7 +3,7 @@ import React from 'react';
 import {
   HEADER_TEXT_ID,
   HEADER_LOGO_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 import { logo } from '../assets/images';
 import '../assets/css/Header.css';

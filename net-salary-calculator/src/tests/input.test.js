@@ -1,4 +1,5 @@
 import React from 'react';
+import userEvent from '@testing-library/user-event';
 import { render, screen, configure } from '@testing-library/react';
 
 import { formsProps } from '../helpers/componentsProps';
@@ -9,11 +10,11 @@ import {
   INPUT_ID,
   INPUT_LABEL_ID,
   INPUT_QUESTION_TEXT_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 
-const { salaryInputProps } = formsProps;
+const { salaryInputProps, discountInputProps } = formsProps;
 
 describe('Create an Input with the following characteristics', () => {
   test('Verify if the input to be with correct characteristics', () => {
@@ -40,5 +41,29 @@ describe('Create an Input with the following characteristics', () => {
 
     expect(question).toBeInTheDocument();
     expect(question).toHaveTextContent('Salário bruto sem descontos');
+  });
+
+  test('Verify if the salary input has the correct format', () => {
+    render(<Input { ...salaryInputProps(() => {}) } />);
+    const input = screen.getByTestId(INPUT_ID.salaryInput);
+
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('0,01');
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('0,11');
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('1,11');
+  });
+
+  test('Verify if the discount input has the correct format', () => {
+    render(<Input { ...discountInputProps(() => {}) } />);
+    const input = screen.getByTestId(INPUT_ID.discountInput);
+
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('0,01');
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('0,11');
+    userEvent.type(input, '1');
+    expect(input.value).toEqual('1,11');
   });
 });

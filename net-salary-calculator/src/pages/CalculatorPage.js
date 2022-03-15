@@ -1,12 +1,16 @@
 import React from 'react';
 
-import Form from '../components/Form';
-import CalculationResult from '../components/CalculationResult';
-import HowToCalculate from '../components/HowToCalculate';
+import {
+  Header,
+  Form,
+  CalculationResult,
+  HowToCalculate,
+} from '../components';
 
 function CalculatorPage() {
   return (
     <section>
+      <Header />
       <Form />
       <CalculationResult />
       <HowToCalculate />

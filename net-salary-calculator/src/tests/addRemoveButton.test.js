@@ -7,7 +7,7 @@ import AddRemoveButton from '../components/AddRemoveButton';
 
 import {
   BUTTON_ID,
-} from '../constants/tagIds';
+} from '../constants';
 
 configure({ testIdAttribute: 'id' });
 
