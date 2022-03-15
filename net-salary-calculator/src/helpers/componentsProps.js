@@ -6,7 +6,8 @@ import {
 } from '../constants/tagIds';
 
 const formsProps = {
-  salaryInputProps: (callback) => ({
+  salaryInputProps: (callback, value = 0) => ({
+    inputValue: value,
     inputId: INPUT_ID.salaryInput,
     labelId: INPUT_LABEL_ID.salaryLabel,
     questionId: INPUT_QUESTION_TEXT_ID.salaryQuestion,
@@ -20,7 +21,8 @@ const formsProps = {
     inputSectionClassName: 'first-input-section',
     handleChange: callback,
   }),
-  discountInputProps: (callback) => ({
+  discountInputProps: (callback, value = 0) => ({
+    inputValue: value,
     inputId: INPUT_ID.discountInput,
     labelId: INPUT_LABEL_ID.discountLabel,
     questionId: INPUT_QUESTION_TEXT_ID.discountQuestion,

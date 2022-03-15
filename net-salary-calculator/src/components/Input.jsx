@@ -1,9 +1,11 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { string, number, func } from 'prop-types';
+import CurrencyInput from 'react-currency-input';
 
 import { question } from '../assets/images';
 
 function Input({
+  inputValue,
   labelId,
   inputId,
   questionId,
@@ -27,12 +29,14 @@ function Input({
         {label}
         <div className="input-group">
           <span className={ inputGroupClassName }>R$</span>
-          <input
+          <CurrencyInput
             id={ inputId }
             name={ name }
-            type="number"
+            value={ inputValue }
             placeholder="0,00"
-            onChange={ handleChange }
+            thousandSeparator="."
+            decimalSeparator=","
+            onChangeEvent={ handleChange }
             className={ inputClassName }
           />
         </div>
@@ -56,6 +60,7 @@ Input.propTypes = {
   questionId: string.isRequired,
   label: string.isRequired,
   name: string.isRequired,
+  inputValue: number.isRequired,
   questionCircleText: string.isRequired,
   handleChange: func.isRequired,
   labelClassName: string.isRequired,

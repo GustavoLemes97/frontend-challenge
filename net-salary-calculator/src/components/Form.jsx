@@ -25,7 +25,11 @@ function Form() {
     dependents: (value) => setDependents(value),
   };
 
-  const handleChange = ({ target: { name, value } }) => {
+  const handleChangeCurrencyInput = ({ target: { name } }, _, value) => {
+    inputSetter[name](value);
+  };
+
+  const handleChangeInput = ({ target: { name, value } }) => {
     inputSetter[name](Number(value));
   };
 
@@ -50,13 +54,13 @@ function Form() {
   return (
     <form>
       <Input
-        { ...salaryInputProps(handleChange) }
+        { ...salaryInputProps(handleChangeCurrencyInput, salary) }
       />
       <Input
-        { ...discountInputProps(handleChange) }
+        { ...discountInputProps(handleChangeCurrencyInput, discount) }
       />
       <AddRemoveInput
-        { ...addRemoveInputProps(handleChange, { dependents, setDependents }) }
+        { ...addRemoveInputProps(handleChangeInput, { dependents, setDependents }) }
       />
       <Button
         { ...buttonProps(handleCalculate) }
