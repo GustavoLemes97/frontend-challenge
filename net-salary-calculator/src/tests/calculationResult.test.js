@@ -3,8 +3,6 @@ import { screen, configure } from '@testing-library/react';
 
 import renderWithRedux from './testConfig';
 
-import getFormattedValue from '../utils/convertValueFormat';
-
 import CalculationResult from '../components/CalculationResult';
 
 import {
@@ -54,10 +52,8 @@ describe('Create a Component with the calculate result', () => {
   test('Verify if the net salary to be in the component', () => {
     renderWithRedux(<CalculationResult />, { initialState: INITIAL_STATE });
     const netSalaryResult = screen.getByTestId(CALCULATE_NET_SALARY_TEXT_ID);
-    const { calculator: { netSalaryData: { netSalary } } } = INITIAL_STATE;
-    const formattedValue = getFormattedValue(netSalary);
 
     expect(netSalaryResult).toBeInTheDocument();
-    expect(netSalaryResult).toHaveTextContent(formattedValue);
+    expect(netSalaryResult).toHaveTextContent('2.398,83');
   });
 });

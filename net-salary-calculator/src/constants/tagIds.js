@@ -3,6 +3,8 @@ const HEADER_LOGO_ID = 'header-logo';
 const CALCULATE_RESULT_TEXT_ID = 'calculate-result-text';
 const ABBREVIATION_TEXT_ID = 'abbreviation-text';
 const CALCULATE_NET_SALARY_TEXT_ID = 'calculate-net-salary';
+const HOW_TO_CALCULATE_TEXT_ID = 'how-to-calculate-text';
+const HOW_TO_CALCULATE_TABLE_ID = 'how-to-calculate-table';
 
 const INPUT_ID = {
   salaryInput: 'salary-input',
@@ -36,4 +38,6 @@ module.exports = {
   CALCULATE_RESULT_TEXT_ID,
   ABBREVIATION_TEXT_ID,
   CALCULATE_NET_SALARY_TEXT_ID,
+  HOW_TO_CALCULATE_TEXT_ID,
+  HOW_TO_CALCULATE_TABLE_ID,
 };
