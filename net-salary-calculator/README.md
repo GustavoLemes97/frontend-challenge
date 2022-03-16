@@ -21,6 +21,10 @@ Para que o cálculo seja realizado, valores válidos (números) devem ser digita
 * Caso digite **apenas** o salário bruto, o salário será calculado considerando os outros valores como sendo 0.
 * Caso o salário **não** seja digitado, o cálculo será feito considerando todos os valores como sendo 0.
 
+## :globe_with_meridians: Deploy
+
+Se quiser testar o deploy, o projeto está disponível através desse link: [Link do Projeto](https://net-salary-calculator.vercel.app/).
+
 ## :gear: Configuração
 
 Caso queira *buildar* este projeto localmente, siga os seguintes passos:
@@ -32,4 +36,4 @@ Caso queira executar testes unitários e/ou end to end do projeto, siga os segui
 * Use o comando `npm test` para que seja executado os testes unitários.
 * Enquanto o projeto esteja sendo compilado, use o comando `npm run cy:open` e assim que abrir uma janela, selecione os testes integrados do arquivo `calculator_page.spec.js` para que seja possível ver os testes end to end do *Cypress* serem executados.
 
-**Nota: Caso a porta 3000 não esteja compilando o projeto, os testes falharam, pois os testes foram feitos considerando o projeto compilado em dada porta.**
+**Nota: Caso a porta 3000 não esteja compilando o projeto, os testes do *Cypress* falharam, pois os testes foram feitos considerando o projeto compilado em dada porta.**
