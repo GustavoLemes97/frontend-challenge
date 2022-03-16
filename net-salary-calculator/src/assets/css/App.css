@@ -1,0 +1,13 @@
+.app {
+  background: linear-gradient(116.58deg, #5A2782 0%, #7A1F9A 29.33%, #4939A7 60.02%, #0B7FB0 79.47%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  font-style: normal;
+  height: 1406px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 2000px;
+}
